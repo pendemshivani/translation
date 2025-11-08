@@ -1,205 +1,191 @@
-/* Reset and Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
 body {
-  height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #e9f1f5, #dce8ec);
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
-/* Card Container */
-.translate-container {
+.translator-wrapper {
   width: 100%;
-  max-width: 520px;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 2rem;
-  border-radius: 20px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.7s ease-in-out;
+  padding: 20px;
 }
 
-/* Title */
-.translate-container h1 {
-  text-align: center;
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.tagline {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #cfd8dc;
-  margin-bottom: 1.4rem;
-}
-
-/* Textarea */
-textarea {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  resize: none;
+.translator-card {
   background: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
-  margin-bottom: 0.5rem;
-}
-
-textarea:focus {
-  border: 2px solid #4fc3f7;
-  background: white;
-}
-
-.char-count {
-  text-align: right;
-  font-size: 0.8rem;
-  color: #b0bec5;
-  margin-bottom: 1rem;
-}
-
-/* Language Selectors */
-.language-selectors {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 1.4rem;
-}
-
-.language-selectors select {
-  flex: 1;
-  padding: 10px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  transition: 0.3s;
-}
-
-.language-selectors select:focus {
-  background: white;
-  box-shadow: 0 0 6px #4fc3f7;
-}
-
-.swap-btn {
-  padding: 10px 16px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 12px;
-  background: #4fc3f7;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.swap-btn:hover {
-  background: #039be5;
-}
-
-/* Buttons */
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-
-button {
-  cursor: pointer;
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: auto;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
-.translate-btn {
-  flex: 1;
-  padding: 12px;
-  font-size: 1rem;
+.translator-card:hover {
+  transform: scale(1.01);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #002b41;
+  font-size: 1.8rem;
+}
+
+header p {
+  color: #4e6b77;
+  font-size: 0.9rem;
+}
+
+/* Language Row */
+.lang-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.lang-label span {
+  background: #f5fbfc;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid #d7e3e7;
+  color: #00586f;
   font-weight: 500;
-  background: #0288d1;
-  color: white;
+}
+
+.swap-btn {
+  background: #00b4d8;
   border: none;
-  border-radius: 12px;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.translate-btn:hover:not(:disabled) {
-  background: #0277bd;
+.swap-btn:hover {
+  background: #0077b6;
 }
 
-.clear-btn {
+/* Input Section */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+textarea {
   flex: 1;
   padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.7);
-  color: #263238;
+  background: #f9fbfc;
+  resize: none;
+}
+
+.mic-btn {
+  background: #0077b6;
+  color: #fff;
   border: none;
   border-radius: 12px;
+  padding: 0 14px;
+  cursor: pointer;
+  width: 90px;
+  transition: all 0.3s ease;
 }
 
-.clear-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
+.mic-btn.listening {
+  background: radial-gradient(circle at center, #00a6b7, #0077b6);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.6);
+  animation: pulse 1.6s infinite ease-in-out;
 }
 
-/* Output Box */
-.translation-output {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1rem;
-  border-radius: 12px;
-  animation: fadeIn 0.5s ease-in-out;
-  margin-top: 1rem;
+/* 🎧 Neural Pulse Wave */
+.live-wave {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 32px;
+  gap: 3px;
 }
 
-.translation-output h2 {
+.live-wave span {
+  width: 4px;
+  background: linear-gradient(180deg, #00b4d8, #0077b6);
+  border-radius: 2px;
+  transition: height 0.15s ease-in-out, background 0.15s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Translate Button */
+.translate-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #0077b6, #0096c7);
+  border: none;
+  color: white;
   font-size: 1.1rem;
-  color: #0288d1;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.translation-output p {
-  font-size: 1rem;
-  color: #37474f;
-  margin-bottom: 0.5rem;
+.output-box {
+  background: #f7fafb;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid #d9e3e9;
 }
 
-.copy-btn {
-  background: #4fc3f7;
+.output-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.output-actions button {
+  background: #00a7b3;
+  border: none;
   color: white;
   padding: 8px 12px;
-  font-size: 0.9rem;
-  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.history-section {
+  margin-top: 20px;
+}
+
+.history-item {
+  background: #eef5f8;
   border-radius: 10px;
+  padding: 10px;
+  margin-top: 8px;
+  cursor: pointer;
 }
 
-.copy-btn:hover {
-  background: #039be5;
-}
-
-/* Footer */
-.footer-info {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #cfd8dc;
-  margin-top: 12px;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.history-item:hover {
+  background: #e0eef3;
 }
