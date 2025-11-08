@@ -40,7 +40,6 @@ It automatically detects the language you speak or type, translates it into the 
 - **Local Storage** – to maintain recent translation history  
 - **Custom CSS** – for professional design and responsive layout  
 
----
 
 ## 🧩 Setup & Run Locally
 
@@ -51,13 +50,20 @@ python -m venv venv
 venv\Scripts\activate   # (use 'source venv/bin/activate' on Mac/Linux)
 pip install -r requirements.txt
 uvicorn inference_app:app --reload
-✅ Now open http://127.0.0.1:8000/docs to test your API.
+````
 
-Frontend (React)
-bash
-Copy code
+✅ Now open [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to test your API.
+
+---
+
+### Frontend (React)
+
+```bash
 cd frontend
 npm install
 npm start
-✅ Now visit http://localhost:3000 to use your translator.
+```
+
+✅ Now visit [http://localhost:3000](http://localhost:3000) to use your translator.
+
 
