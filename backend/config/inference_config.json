@@ -1,0 +1,6 @@
+{
+  "model_dir": "models/en_te_bi",
+  "host": "0.0.0.0",
+  "port": 8000,
+  "device": "auto"
+}

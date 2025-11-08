@@ -1,0 +1,10 @@
+torch
+transformers
+datasets
+sentencepiece
+sacremoses
+evaluate
+fastapi
+uvicorn
+pandas
+scikit-learn

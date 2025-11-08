@@ -1,0 +1,22 @@
+# === PYTHON BACKEND ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.env
+
+# === NODE FRONTEND ===
+node_modules/
+build/
+dist/
+
+# === MODEL FILES ===
+*.bin
+*.pt
+*.h5
+*.ckpt
+
+# === SYSTEM FILES ===
+.DS_Store
+Thumbs.db
