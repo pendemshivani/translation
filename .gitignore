@@ -20,3 +20,9 @@ dist/
 # === SYSTEM FILES ===
 .DS_Store
 Thumbs.db
+# Ignore large model files
+*.pt
+*.bin
+*.h5
+*.ckpt
+*.safetensors
